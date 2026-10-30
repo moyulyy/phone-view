@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">结构查看器</string>
+    <string name="subtitle">POSCAR · CONTCAR · CIF · XYZ</string>
+    <string name="open_file">打开</string>
+    <string name="clear">清空</string>
+    <string name="welcome">从其他应用「打开方式 / 分享」直接打开，或点击「打开」选择结构文件</string>
+</resources>

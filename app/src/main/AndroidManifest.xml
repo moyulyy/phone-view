@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:hardwareAccelerated="true"
+        android:requestLegacyExternalStorage="true"
+        android:theme="@style/Theme.App">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:configChanges="orientation|screenSize|keyboardHidden">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <!-- 1a) file:// 且未带 MIME 类型（部分文件管理器如此） -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="file" android:host="*" android:pathSuffix=".cif" />
+                <data android:scheme="file" android:host="*" android:pathSuffix=".CIF" />
+                <data android:scheme="file" android:host="*" android:pathSuffix=".xyz" />
+                <data android:scheme="file" android:host="*" android:pathSuffix=".XYZ" />
+                <data android:scheme="file" android:host="*" android:pathSuffix=".vasp" />
+                <data android:scheme="file" android:host="*" android:pathSuffix=".VASP" />
+                <data android:scheme="file" android:host="*" android:pathSuffix=".poscar" />
+                <data android:scheme="file" android:host="*" android:pathSuffix=".POSCAR" />
+                <data android:scheme="file" android:host="*" android:pathSuffix=".contcar" />
+                <data android:scheme="file" android:host="*" android:pathSuffix=".CONTCAR" />
+                <data android:scheme="file" android:host="*" android:pathSuffix="POSCAR" />
+                <data android:scheme="file" android:host="*" android:pathSuffix="poscar" />
+                <data android:scheme="file" android:host="*" android:pathSuffix="CONTCAR" />
+                <data android:scheme="file" android:host="*" android:pathSuffix="contcar" />
+            </intent-filter>
+
+            <!-- 1b) file:// 且带任意 MIME 类型 -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="file" android:host="*" android:pathSuffix=".cif" android:mimeType="*/*" />
+                <data android:scheme="file" android:host="*" android:pathSuffix=".CIF" android:mimeType="*/*" />
+                <data android:scheme="file" android:host="*" android:pathSuffix=".xyz" android:mimeType="*/*" />
+                <data android:scheme="file" android:host="*" android:pathSuffix=".XYZ" android:mimeType="*/*" />
+                <data android:scheme="file" android:host="*" android:pathSuffix=".vasp" android:mimeType="*/*" />
+                <data android:scheme="file" android:host="*" android:pathSuffix=".VASP" android:mimeType="*/*" />
+                <data android:scheme="file" android:host="*" android:pathSuffix=".poscar" android:mimeType="*/*" />
+                <data android:scheme="file" android:host="*" android:pathSuffix=".POSCAR" android:mimeType="*/*" />
+                <data android:scheme="file" android:host="*" android:pathSuffix=".contcar" android:mimeType="*/*" />
+                <data android:scheme="file" android:host="*" android:pathSuffix=".CONTCAR" android:mimeType="*/*" />
+                <data android:scheme="file" android:host="*" android:pathSuffix="POSCAR" android:mimeType="*/*" />
+                <data android:scheme="file" android:host="*" android:pathSuffix="poscar" android:mimeType="*/*" />
+                <data android:scheme="file" android:host="*" android:pathSuffix="CONTCAR" android:mimeType="*/*" />
+                <data android:scheme="file" android:host="*" android:pathSuffix="contcar" android:mimeType="*/*" />
+            </intent-filter>
+
+            <!-- 2) content:// 内容提供器（按 MIME 类型） -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="content" android:mimeType="chemical/x-cif" />
+                <data android:scheme="content" android:mimeType="chemical/x-xyz" />
+                <data android:scheme="content" android:mimeType="application/x-cif" />
+                <data android:scheme="content" android:mimeType="application/x-xyz" />
+                <data android:scheme="content" android:mimeType="text/plain" />
+            </intent-filter>
+
+            <!-- 3) 接收分享（SEND）任意文件：POSCAR/CONTCAR 常无标准 MIME，靠分享最可靠 -->
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="*/*" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

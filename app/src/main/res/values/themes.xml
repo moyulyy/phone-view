@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.App" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/system_blue</item>
+        <item name="colorPrimaryDark">@color/system_grouped_background</item>
+        <item name="colorAccent">@color/system_blue</item>
+        <item name="android:windowBackground">@color/system_grouped_background</item>
+        <item name="android:statusBarColor">@color/system_grouped_background</item>
+        <item name="android:navigationBarColor">@color/system_grouped_background</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:textColorPrimary">@color/label</item>
+        <item name="android:textColorSecondary">@color/secondary_label</item>
+    </style>
+</resources>

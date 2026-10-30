@@ -1,0 +1,24 @@
+# Gradle / Android build output
+build/
+.gradle/
+.kotlin/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Local machine configuration
+local.properties
+
+# IDE
+.idea/
+*.iml
+
+# Misc
+.DS_Store
+Thumbs.db
+
+# 根目录下预先构建的安装包（正式分发包见 dist/）
+/*.apk
+
+# 3Dmol 的原始副本（应用实际使用的是 app/src/main/assets/3Dmol-min.js）
+/3Dmol-min.js
