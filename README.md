@@ -5,6 +5,7 @@
 **在 Android 手机上直接打开 POSCAR / CONTCAR / CIF / XYZ 结构文件，用 WebView + 3Dmol.js 做 3D 可视化。**
 
 [![Platform](https://img.shields.io/badge/Platform-Android-3DDC84?logo=android&logoColor=white)](https://developer.android.com)
+[![Release](https://img.shields.io/github/v/release/moyulyy/phone-view?label=release&color=blue)](https://github.com/moyulyy/phone-view/releases/latest)
 [![minSdk](https://img.shields.io/badge/minSdk-24-blue)](app/build.gradle)
 [![Kotlin](https://img.shields.io/badge/Kotlin-2.1-7F52FF?logo=kotlin&logoColor=white)](https://kotlinlang.org)
 [![3Dmol.js](https://img.shields.io/badge/3Dmol.js-bundled%20offline-orange)](https://3dmol.org)
@@ -25,8 +26,12 @@
 
 ## 下载安装
 
-- 直接下载已构建的安装包：[**dist/phone-view-1.0.apk**](dist/phone-view-1.0.apk)（`versionName 1.0`，使用 debug 签名，可直接侧载）。
+- **推荐**：从 [Releases · v1.0](https://github.com/moyulyy/phone-view/releases/latest) 下载
+  [`phone-view-1.0.apk`](https://github.com/moyulyy/phone-view/releases/latest/download/phone-view-1.0.apk)
+  （`versionName 1.0`，使用 debug 签名，可直接侧载；适用 Android 7.0+）。
   手机浏览器下载后允许「安装未知应用」即可安装。
+- 仓库内也保留了一份副本：[dist/phone-view-1.0.apk](dist/phone-view-1.0.apk)
+  （SHA-256 `d22053359c52a115e3d9eaa6b2e5005a9b947ec1fb6e3f419778d3e6eb38a1e8`）。
 - 或从源码自行构建，见 [构建](#构建)。
 
 ## 支持格式
